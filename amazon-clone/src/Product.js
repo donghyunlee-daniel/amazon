@@ -18,7 +18,6 @@ function Product( {id,title,image,price,rating}) {
     });
   };
 
-  console.log("Check cart",basket);
   return (
     <div className='product'>
         <div className='product_info'>
