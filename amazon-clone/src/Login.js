@@ -1,9 +1,43 @@
-import React from 'react'
-import './Login.css'
+import React, { useState } from "react";
+import "./Login.css";
+import { Link } from "react-router-dom";
 function Login() {
+    const [email,setEmail] = useState();
+    const [password,setPassword] = useState();
+
+    const signIn = e =>{
+        e.preventDefault();
+    }
+
+    const signUp = e => {
+        e.preventDefault();
+    }
   return (
-    <h1>asdf</h1>
-  )
+    <div className="login">
+      <Link to="/">
+        <img
+          className="login_logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2880px-Amazon_logo.svg.png"
+          alt=""
+        />
+      </Link>
+
+      <div className='login_container'>
+        <h1>Login</h1>
+        <form>
+            <h5>Email</h5>
+            <input value={email} onChange={e=>setEmail(e.target.value)} type='text'/>
+            <h5>Paswword</h5>
+            <input value={password} onChange={e=>setPassword(e.target.value)} type='password'/>
+
+            <button className="login_signInButton" onClick={signIn}>Sign In</button>
+        </form>
+
+        <p>Terms of Use</p>
+        <button className="login_registerButton" onClick={signUp}>SignUp</button>
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;
