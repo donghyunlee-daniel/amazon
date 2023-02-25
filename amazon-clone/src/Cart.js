@@ -4,7 +4,7 @@ import CartProduct from "./CartProduct";
 import "./Cart.css";
 import { useStateValue } from "./StateProvider";
 function Cart() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   return (
     <div className="cart">
       <div className="cart_left">
@@ -14,7 +14,7 @@ function Cart() {
         />
 
         <div>
-          <h2 className="cart_title">Cart</h2>
+          <h2 className="cart_title">{user?.email}'s Cart</h2>
 
             {basket.map(item=>(
                 <CartProduct 
